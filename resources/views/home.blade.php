@@ -14,3 +14,14 @@
     </ul> 
 </nav>
 @endsection
+
+@section('content')
+ 
+ @foreach($images as $image)
+    <div class="image_content">
+        <img class="image_object" src="{{ asset('uploads/' . $image->getFilename()) }}">
+    </div>
+ 
+@endforeach
+
+@endsection

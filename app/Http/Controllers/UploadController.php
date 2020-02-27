@@ -27,7 +27,7 @@ class UploadController extends Controller
         $destination="uploads";
         $file->move($destination,$name);
 
-        return redirect('/upload');
+        return back()->with('success','File Uploaded Successfully!');
 
     }
 }

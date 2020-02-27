@@ -10,6 +10,11 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('home',["title"=>"Home"]);
+        $images =\File::allFiles(public_path('uploads'));
+
+      
+     
+            return view('home',["title"=>"Home","images"=>$images]);
+        
     }
 }
