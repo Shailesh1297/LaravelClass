@@ -9,7 +9,7 @@
 <ul class="nav"> 
       <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li> 
       <li class="nav-item"><a class="nav-link" href="/upload">FileUpload</a></li> 
-      <li class="nav-item"><a class="nav-link" href="/database">Database</a></li> 
+      <li class="nav-item"><a class="nav-link" href="/post">Post</a></li> 
      
     </ul> 
 </nav>

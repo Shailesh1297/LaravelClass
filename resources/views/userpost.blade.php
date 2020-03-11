@@ -1,7 +1,7 @@
 @extends('layouts.common')
 
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/fileUpload.css')}}">
+<link rel="stylesheet" href="{{asset('css/userPost.css')}}">
 @endsection
 
 @section('navigation')
@@ -16,20 +16,26 @@
 @endsection
 
 @section('content')
-<div class="upload-form">
-  <h2 class="upload-header">Upload File</h2>
-    <form role="form" action="/upload" method="post" enctype="multipart/form-data">
+<div class="post-form">
+  <h2 class="post-header">Post</h2>
+    <form role="form" action="/post" method="post" enctype="multipart/form-data">
         <input type="hidden" class="" name="_token" value="{{csrf_token()}}">
+        
         <div class="form-group">
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="upload_email" placeholder="Email">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" name="title" id="post_title" placeholder="Post title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control"  name="description" id="post_description" placeholder="Post here">
+            </textarea>
         </div>
         <div class="form-group">
             
             <input class="form-control" type="file" name="file" id="upload_file">
         </div>
         <div class="form-group">
-        <button class="btn btn-success"  type="submit">Upload</button>
+        <button class="btn btn-success"  type="submit">Post</button>
         </div>
     </form>
     @if (count($errors) > 0)
