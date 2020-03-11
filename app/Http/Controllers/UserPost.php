@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class UserPost extends Controller
 {
     /**
@@ -13,7 +15,10 @@ class UserPost extends Controller
      */
     public function index()
     {
-    return view('userpost',["title"=>"Post"]);
+       $post=new Post;
+        $data=$post->all();
+    
+   return view('posts',["title"=>"Posts",'datas'=>$data]);
     }
 
     /**
@@ -36,6 +41,38 @@ class UserPost extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'file'=>'required'
+        ]);
+
+        //image processsing
+        $file=$request->file('file');
+        $name=date("Y-m-d_H_i_s").".".$file->getClientOriginalExtension();
+        $destination="uploads";
+        $file->move($destination,$name);
+
+        //title 
+        $title=$request->input('title');
+
+        //description
+        $description=$request->input('description');
+
+        //saving in database
+
+        $post=new Post;
+
+        $post->title=$title;
+
+        $post->description=$description;
+
+        $post->image=$name;
+
+        $post->save();
+
+        return redirect('/home');
+        
     }
 
     /**

@@ -8,8 +8,9 @@
 <nav class="navbar"> 
 <ul class="nav"> 
       <li class="nav-item"><a class="nav-link " href="/home">Home</a></li> 
-      <li class="nav-item"><a class="nav-link active" href="/upload">FileUpload</a></li> 
-      <li class="nav-item"><a class="nav-link" href="/post">Post</a></li> 
+      <li class="nav-item"><a class="nav-link " href="/upload">FileUpload</a></li> 
+      <li class="nav-item"><a class="nav-link" href="/posts">Posts</a></li> 
+      <li class="nav-item"><a class="nav-link active" href="/post">Post</a></li> 
      
     </ul> 
 </nav>
@@ -18,7 +19,7 @@
 @section('content')
 <div class="post-form">
   <h2 class="post-header">Post</h2>
-    <form role="form" action="/post" method="post" enctype="multipart/form-data">
+    <form role="form" action="/posts" method="post" enctype="multipart/form-data">
         <input type="hidden" class="" name="_token" value="{{csrf_token()}}">
         
         <div class="form-group">
@@ -27,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control"  name="description" id="post_description" placeholder="Post here">
+            <textarea class="form-control"  name="description" id="post_description">
             </textarea>
         </div>
         <div class="form-group">
@@ -48,12 +49,6 @@
    </div>
 @endif
 
-@if ($message = Session::get('success'))
-<div class="alert alert-success alert-block">
-	
-        <strong>{{ $message }}</strong>
-</div>
-@endif
 </div>
 
 @endsection

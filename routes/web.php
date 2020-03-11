@@ -26,7 +26,9 @@ Route::get('/upload','UploadController@showUpload');
 
 Route::post('/upload','UploadController@validateUpload');
 
-Route::resource('/post','UserPost');
+Route::get('/post','PostController@show');
+
+Route::resource('/posts','UserPost');
 
 
 
