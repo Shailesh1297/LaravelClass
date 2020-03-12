@@ -17,27 +17,18 @@
 @endsection
 
 @section('content')
-
+<div class="list-group">
+  <ol type=>
 @if(count($datas) > 0)
   @foreach($datas as $data)
-  <div class="post-div">
-    
-      <div class="post-title">
-        <h5 class="mb-1">{{$data->title}}</h5>
-       
-      </div>
-      <div class="post-content">
-        <div class="post-image-block"><img class="post-image" src="{{ asset('uploads').'/'.$data->image}}" alt="post-image" width=100 height=100></div>
-        
-        <div class="post-desc"> <p class="mb-1">{{$data->description}}</p></div>
-     </div>
-    
-   </div>
-
-    
-      
-    
+  <div class="posts">
+  <li><a href="/posts/{{$data->id}}" class="list-group-item list-group-item-action post-item">{{$data->title}}</a>
+   <div class="post-item">created on:{{$data->created_at}}</div>
+   <diV class="post-item">updated on:{{$data->updated_at}}</div>
+</li>
+</div>
   @endforeach
 @endif
-   
+</ol>
+</div>
 @endsection

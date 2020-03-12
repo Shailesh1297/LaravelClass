@@ -71,7 +71,7 @@ class UserPost extends Controller
 
         $post->save();
 
-        return redirect('/home');
+        return redirect('/posts');
         
     }
 
@@ -84,6 +84,8 @@ class UserPost extends Controller
     public function show($id)
     {
         //
+
+        
     }
 
     /**
