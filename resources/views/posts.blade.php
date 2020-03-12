@@ -11,6 +11,7 @@
       <li class="nav-item"><a class="nav-link " href="/upload">FileUpload</a></li> 
       <li class="nav-item"><a class="nav-link active" href="/posts">Posts</a></li> 
       <li class="nav-item"><a class="nav-link" href="/post">Post</a></li> 
+      <li class="nav-item"><a class="nav-link " href="/firstlast">FirstLast</a></li>
      
     </ul> 
 </nav>
