@@ -19,7 +19,30 @@
 
 @section('content')
 
+{{ Form::open(['url' => '/firstlast']) }}
+<div class="form-group">
 
+  
 
+    
+    {{ Form::number("num",null, array_merge(['class' => 'form-control','placeholder'=>'number'])) }}
 
+ 
+    {{ Form::number("first-num",null, array_merge(['class' => 'form-control','placeholder'=>'first-digit','disabled'=>'disabled'])) }}
+
+   
+    {{ Form::number("second-num",null, array_merge(['class' => 'form-control','placeholder'=>'second-digit','disabled'=>'disabled'])) }}
+
+    {{Form::submit('find')}}
+</div> 
+{{ Form::close() }}
+@if (count($errors) > 0)
+   <div class = "alert alert-danger">
+      <ul>
+         @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+         @endforeach
+      </ul>
+   </div>
+@endif
 @endsection

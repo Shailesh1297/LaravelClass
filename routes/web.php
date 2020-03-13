@@ -31,6 +31,7 @@ Route::get('/post','PostController@show');
 Route::resource('/posts','UserPost');
 
 Route::get('/firstlast','FirstLastController@show');
+Route::post('/firstlast','FirstLastController@find');
 
 
 
