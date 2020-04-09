@@ -86,9 +86,8 @@ class UserPost extends Controller
     public function show($id)
     {
         //
-        //$post=new Post;
+        // $post=new Post;
       
-        
 
         
     }
