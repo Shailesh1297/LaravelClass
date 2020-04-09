@@ -13,9 +13,11 @@ class UserPost extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    
+     public function index()
     {
-       $post=new Post;
+        $post=new Post;
         $data=$post->all();
     
    return view('posts',["title"=>"Posts",'datas'=>$data]);
@@ -84,6 +86,9 @@ class UserPost extends Controller
     public function show($id)
     {
         //
+        //$post=new Post;
+      
+        
 
         
     }
@@ -96,7 +101,10 @@ class UserPost extends Controller
      */
     public function edit($id)
     {
-        //
+          $data=Post::find($id);
+          //$users = Post::where('id',1)->first();
+       // return $data;
+         return view('updatePost',['title'=>'Update','data'=>$data]);
     }
 
     /**
@@ -109,6 +117,19 @@ class UserPost extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            
+        ]);
+
+        $data=Post::find($id);
+        $data->title=$request->input('title');
+        $data->description=$request->input('description');
+        $data->save();
+
+        return redirect('/posts')->with('success','Data Updated');
+
     }
 
     /**
@@ -120,5 +141,8 @@ class UserPost extends Controller
     public function destroy($id)
     {
         //
+        $data=Post::find($id);
+        $data->delete();
+        return redirect('/posts')->with('success','Data Deleted');
     }
 }

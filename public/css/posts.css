@@ -1,6 +1,6 @@
 .post-item{
-    width:33%;
-    height:30%;
+    width:19.5%;
+    height:25%;
     display: inline-block;
 }
 
@@ -18,4 +18,8 @@
 .posts a:hover{
     background-color: blueviolet;
     color:white;
+}
+
+div button{
+    display: inline-block;
 }

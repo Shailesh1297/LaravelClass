@@ -6,6 +6,11 @@
 
 
 @section('content')
+@if(\Session::has('warning'))
+<div class="alert alert-danger">
+  <h3>{{\Session::get('warning')}}</h3>
+</div>
+@endif
 <div class="login-form">
   <h2 class="login-header">Login</h2>
     <form role="form" action="/login" method="post">

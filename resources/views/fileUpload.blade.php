@@ -12,6 +12,7 @@
       <li class="nav-item"><a class="nav-link" href="/posts">Posts</a></li> 
       <li class="nav-item"><a class="nav-link" href="/post">Post</a></li> 
       <li class="nav-item"><a class="nav-link " href="/firstlast">FirstLast</a></li>
+      <li class="nav-item"><a class="nav-link " href="/session">Session</a></li>
      
     </ul> 
 </nav>
